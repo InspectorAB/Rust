@@ -1,3 +1,5 @@
+use std::fs::read_to_string;
+
 fn main() {
     println!("Hello, world!");
 
@@ -53,6 +55,16 @@ fn main() {
         None => println!("a not found"),
     }
 
+    // result enum
+    let ans = read_from_file_hello(String::from("a.txt"));
+}
+
+fn read_from_file_hello(file_path: String) -> Result<String,String>{
+    let result = read_to_string(file_path);
+    match result{
+        Ok(data) => Ok(data),
+        Err(_err) => Err(String::from("File not read")),
+    }
 }
 
 fn find_first_a(s: String) -> Option<i32>{
