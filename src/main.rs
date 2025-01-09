@@ -121,6 +121,7 @@ fn fib(num: i32) -> i32 {
     }
 
     return second;
+    
 }
 
 fn get_string_length(s: &str) -> usize{
