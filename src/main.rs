@@ -57,7 +57,29 @@ fn main() {
 
     // result enum
     let ans = read_from_file_hello(String::from("a.txt"));
+
+    //vectors
+    let mut vec = Vec::new();
+    vec.push(1);
+    vec.push(2);
+    vec.push(3);
+    println!("{:?}",vec);
+
+    println!("Print all even : {:?}",even_filter(vec));
 }
+
+fn even_filter(vec: Vec<i32>) -> Vec<i32>{
+    let mut new_vec = Vec::new();
+    for val in vec{
+        if val % 2 == 0{
+            new_vec.push(val);
+        }
+    }
+
+    return new_vec;
+}
+
+
 
 fn read_from_file_hello(file_path: String) -> Result<String,String>{
     let result = read_to_string(file_path);
